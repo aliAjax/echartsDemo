@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./echarts.min.js"></script>
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 992px;
+            height: 407px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+    </div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('box'));
+         // 指定图表的配置项和数据
+         var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data:['客座','平均折扣','收入']
+            },
+            xAxis: {
+                data: ["1","2","3","4","5","6","7","8","9","10","11","12"],
+                splitLine:{
+                    show:true,
+                    lineStyle:{
+                        type:"solid"
+                    }
+                }
+            },
+            yAxis: [{
+                name: '收入(元)',
+                max: 100,
+                min:0,
+                type: 'value',
+                splitLine:{
+                    show:true,
+                    lineStyle:{
+                        type:"dashed"
+                    }
+                }
+                // nameLocation: 'start',
+            },{
+                name:"客座/折扣（%）",
+                max:100,
+                min:0,
+                type:"value",
+                splitLine:{
+                    show:true,
+                    lineStyle:{
+                        type:"dashed"
+                    }
+                }
+            },],
+            series: [
+            {
+                name:"客座",
+                type:"line",
+                color:"#ffbe7b",
+                data:[1,2,3,4,5,6,7,8,45,41,75,21,11]
+            },{
+                name:"平均折扣",
+                type:"line",
+                color:"#0d348f",
+                data:[45,41,75,21,11,1,2,3,4,5,6,7,8]
+            },{
+                name: '收入',
+                type: 'bar',
+                color:" #d7d7d7",
+                barWidth:"20",
+                data: [5, 20, 36, 10, 10, 20,21,15,57,74,24,45]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
