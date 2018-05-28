@@ -30,11 +30,11 @@
             },
             tooltip: {},
             legend: {
-                data:['客座','平均折扣','收入']
+                data:['客座','平均折扣','收入']//顶部的具体某个形状或者线条对应的数据
             },
             xAxis: {
                 data: ["1","2","3","4","5","6","7","8","9","10","11","12"],
-                splitLine:{
+                splitLine:{//坐标轴在 grid 区域中的分隔线 http://echarts.baidu.com/option.html#xAxis.splitLine
                     show:true,
                     lineStyle:{
                         type:"solid"
@@ -69,7 +69,7 @@
             {
                 name:"客座",
                 type:"line",
-                color:"#ffbe7b",
+                color:"#ffbe7b",//形状颜色
                 data:[1,2,3,4,5,6,7,8,45,41,75,21,11]
             },{
                 name:"平均折扣",
